@@ -65,19 +65,19 @@ void pointing_device_init_user(void) {
 }
 
 //1
-//layer_state_t layer_state_set_user(layer_state_t state) {
-//    if (get_highest_layer(remove_auto_mouse_layer(state, false)) == 3) {
-//        keyball_set_scroll_mode(true);
-//    } else {
-//        keyball_set_scroll_mode(false);
-//    }
-//    return state;
-//}
-//2
 layer_state_t layer_state_set_user(layer_state_t state) {
-    keyball_set_scroll_mode(false);
+    if (get_highest_layer(remove_auto_mouse_layer(state, false)) == 5) {
+        keyball_set_scroll_mode(true);
+    } else {
+        keyball_set_scroll_mode(false);
+    }
     return state;
 }
+//2
+//layer_state_t layer_state_set_user(layer_state_t state) {
+//    keyball_set_scroll_mode(false);
+//    return state;
+//}
 //origin
 //layer_state_t layer_state_set_user(layer_state_t state) {
 //    // Auto enable scroll mode when the highest layer is 3
